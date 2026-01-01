@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes commandes en cours - Livreur</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="dashboard-livreur.html" class="text-indigo-600 hover:text-indigo-800 mr-4">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-2xl font-bold text-indigo-600">LivraisonApp</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <select id="dashboardSelector" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm">
+                            <option value="client">Dashboard Client</option>
+                            <option value="livreur" selected>Dashboard Livreur</option>
+                            <option value="admin">Dashboard Admin</option>
+                        </select>
+                    </div>
+                    <a href="profil.html" class="text-gray-700 hover:text-indigo-600 transition">Martin Dubois</a>
+                    <button class="text-gray-600 hover:text-indigo-600 transition">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Header -->
+        <div class="mb-8">
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Mes commandes en cours</h2>
+            <p class="text-gray-600">Gérez vos livraisons actives</p>
+        </div>
+
+        <!-- Liste des commandes en cours -->
+        <div class="space-y-6">
+            <!-- Commande en cours -->
+            <div class="bg-white rounded-lg shadow p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Commande #002</h3>
+                        <p class="text-sm text-gray-600">Acceptée le 14/01/2024 à 10:30</p>
+                    </div>
+                    <span class="px-3 py-1 bg-indigo-100 text-indigo-800 rounded-full text-sm font-semibold">
+                        En cours de traitement
+                    </span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Description</p>
+                        <p class="text-gray-800 font-medium">Livraison express</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Adresse de livraison</p>
+                        <p class="text-gray-800 font-medium">456 Avenue Test, 69000 Lyon</p>
+                    </div>
+                </div>
+                
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-sm text-gray-600">Client: Jean Dupont</p>
+                            <p class="text-sm text-gray-600">Téléphone: 06 12 34 56 78</p>
+                        </div>
+                        <button class="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">
+                            <i class="fas fa-check mr-2"></i>Marquer comme expédiée
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commande expédiée -->
+            <div class="bg-white rounded-lg shadow p-6 border-l-4 border-blue-500">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800">Commande #006</h3>
+                        <p class="text-sm text-gray-600">Expédiée le 16/01/2024 à 15:45</p>
+                    </div>
+                    <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-semibold">
+                        Expédiée
+                    </span>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-4">
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Description</p>
+                        <p class="text-gray-800 font-medium">Colis standard</p>
+                    </div>
+                    <div>
+                        <p class="text-sm text-gray-600 mb-1">Adresse de livraison</p>
+                        <p class="text-gray-800 font-medium">789 Boulevard Demo, 13000 Marseille</p>
+                    </div>
+                </div>
+                
+                <div class="border-t pt-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <p class="text-sm text-gray-600">Client: Marie Leclerc</p>
+                            <p class="text-sm text-gray-600">En attente de validation client</p>
+                        </div>
+                        <span class="px-4 py-2 bg-gray-100 text-gray-600 rounded-lg">
+                            En attente de validation
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/commandes-en-cours-livreur.js"></script>
+    <script src="assets/js/dashboard-selector.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat - Application de Livraison</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="dashboard-client.html" class="text-indigo-600 hover:text-indigo-800 mr-4">
+                        <i class="fas fa-arrow-left"></i>
+                    </a>
+                    <h1 class="text-2xl font-bold text-indigo-600">LivraisonApp</h1>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <div class="relative">
+                        <select id="dashboardSelector" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm">
+                            <option value="client">Dashboard Client</option>
+                            <option value="livreur">Dashboard Livreur</option>
+                            <option value="admin">Dashboard Admin</option>
+                        </select>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="text-gray-700">Jean Dupont</span>
+                        <button class="text-gray-600 hover:text-indigo-600 transition">
+                            <i class="fas fa-sign-out-alt"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden" style="height: calc(100vh - 200px);">
+            <div class="flex h-full">
+                <!-- Liste des conversations -->
+                <div class="w-1/3 border-r border-gray-200 bg-gray-50 overflow-y-auto">
+                    <div class="p-4 border-b bg-white">
+                        <h2 class="text-xl font-bold text-gray-800">Conversations</h2>
+                    </div>
+                    <div class="divide-y divide-gray-200">
+                        <div class="p-4 hover:bg-white cursor-pointer transition bg-white border-l-4 border-indigo-500">
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="font-semibold text-gray-800">Martin Dubois</p>
+                                <span class="text-xs text-gray-500">14:30</span>
+                            </div>
+                            <p class="text-sm text-gray-600 truncate">Commande #002 - En cours</p>
+                            <span class="inline-block mt-2 px-2 py-1 bg-indigo-100 text-indigo-800 rounded-full text-xs">2 nouveaux</span>
+                        </div>
+                        <div class="p-4 hover:bg-white cursor-pointer transition">
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="font-semibold text-gray-800">Sophie Martin</p>
+                                <span class="text-xs text-gray-500">Hier</span>
+                            </div>
+                            <p class="text-sm text-gray-600 truncate">Commande #001 - Terminée</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Zone de chat -->
+                <div class="flex-1 flex flex-col">
+                    <!-- En-tête du chat -->
+                    <div class="p-4 border-b bg-white">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-10 h-10 bg-indigo-100 rounded-full flex items-center justify-center">
+                                    <i class="fas fa-user text-indigo-600"></i>
+                                </div>
+                                <div>
+                                    <p class="font-semibold text-gray-800">Martin Dubois</p>
+                                    <p class="text-xs text-gray-500">Livreur - Commande #002</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <button class="p-2 text-gray-600 hover:text-indigo-600">
+                                    <i class="fas fa-phone"></i>
+                                </button>
+                                <button class="p-2 text-gray-600 hover:text-indigo-600">
+                                    <i class="fas fa-video"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Messages -->
+                    <div class="flex-1 overflow-y-auto p-4 bg-gray-50 space-y-4">
+                        <div class="flex items-start space-x-2">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-indigo-600 text-xs"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-white rounded-lg p-3 shadow-sm">
+                                    <p class="text-sm text-gray-800">Bonjour, j'ai bien reçu votre commande. Je serai là dans environ 30 minutes.</p>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">14:25</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2 justify-end">
+                            <div class="flex-1 flex justify-end">
+                                <div>
+                                    <div class="bg-indigo-600 text-white rounded-lg p-3 shadow-sm">
+                                        <p class="text-sm">Parfait, merci ! Je serai disponible.</p>
+                                    </div>
+                                    <p class="text-xs text-gray-500 mt-1 text-right">14:26</p>
+                                </div>
+                            </div>
+                            <div class="w-8 h-8 bg-gray-200 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-gray-600 text-xs"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start space-x-2">
+                            <div class="w-8 h-8 bg-indigo-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-user text-indigo-600 text-xs"></i>
+                            </div>
+                            <div class="flex-1">
+                                <div class="bg-white rounded-lg p-3 shadow-sm">
+                                    <p class="text-sm text-gray-800">J'arrive dans 5 minutes. Pouvez-vous me donner l'adresse exacte ?</p>
+                                </div>
+                                <p class="text-xs text-gray-500 mt-1">14:28</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Zone de saisie -->
+                    <div class="p-4 border-t bg-white">
+                        <form id="chatForm" class="flex items-center space-x-2">
+                            <button type="button" class="p-2 text-gray-600 hover:text-indigo-600">
+                                <i class="fas fa-paperclip"></i>
+                            </button>
+                            <input type="text" id="messageInput" placeholder="Tapez votre message..." 
+                                   class="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500">
+                            <button type="submit" class="px-6 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700">
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/chat.js"></script>
+    <script src="assets/js/dashboard-selector.js"></script>
+</body>
+</html>
+
