@@ -1,5 +1,6 @@
 <?php
-class User
+namespace App\ENTITY\Abstract;
+abstract class User
 {
 
     private string $nom;

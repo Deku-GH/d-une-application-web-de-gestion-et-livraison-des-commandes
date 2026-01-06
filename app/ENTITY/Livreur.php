@@ -1,4 +1,7 @@
 <?php
+namespace App\ENTITY;
+use app\ENTITY\Abstract\User;
+
 class Livreur extends User
 {
 

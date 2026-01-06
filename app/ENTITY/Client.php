@@ -1,5 +1,8 @@
 <?php
-require "../abstract/user.php";
+namespace App\ENTITY;
+
+use app\ENTITY\Abstract\User;
+
 
 class Client extends User
 {
