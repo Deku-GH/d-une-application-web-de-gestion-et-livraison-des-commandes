@@ -1,4 +1,7 @@
-<?php 
+<?php
+use App\ENTITY\Enum\status_offre;
+use App\ENTITY\Livreur;
+
 class OffreS {
    
     private string $price;
@@ -6,8 +9,17 @@ class OffreS {
     private string $vihicle;
 
     private string $option;
-    private string $status;
+    private status_offre $status;
     private array $livreur; 
+
+    public function __construct($price ,$duration ,$vihicle,$option,$status,$livreur)
+    {
+        $this->price = $price;
+        $this->duration = $duration;
+        $this->vihicle = $vihicle;
+        $this->option = $option;
+        $this->status = $status;
+    }
    
 
 

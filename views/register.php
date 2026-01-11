@@ -15,7 +15,7 @@
                 <p class="text-gray-600">Rejoignez notre plateforme de livraison</p>
             </div>
 
-            <form id="registerForm" class="space-y-5">
+            <form action="../app/Services/Cruduser.php" method="post" id="registerForm" class="space-y-5">
                 <div>
                     <label for="nom" class="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
                     <input type="text" id="nom" name="nom" required

@@ -7,7 +7,7 @@ class Commande
     private string $description;
     private string $addrese;
     private string $status;
-
+       
     private array $client;
     private array $offre;
 
@@ -23,6 +23,7 @@ class Commande
         $this->offre = $offre;
 
     }
+    
 
 }
 

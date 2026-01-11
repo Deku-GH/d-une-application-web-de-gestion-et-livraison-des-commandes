@@ -1,3 +1,31 @@
+<?php
+namespace Views;
+
+require __DIR__ . '/../vendor/autoload.php';
+use App\Services\Cruduser;
+use App\Services\UserLoaging;
+
+
+
+
+
+if($_POST){
+    $crud = new Cruduser();
+$user = $crud->checkaccount($_POST['email'], $_POST['password']);
+
+    if ($user) {
+    UserLoaging::byRole($user);
+} else {
+    UserLoaging::toLogin();
+}
+
+}
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -15,7 +43,7 @@
                 <p class="text-gray-600">Connectez-vous à votre compte</p>
             </div>
 
-            <form id="loginForm" class="space-y-6">
+            <form   action="#" method="post" id="loginForm" class="space-y-6">
                 <div>
                     <label for="email" class="block text-sm font-medium text-gray-700 mb-2">Email</label>
                     <input type="email" id="email" name="email" required

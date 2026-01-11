@@ -1,5 +1,23 @@
+<?php
+// namespace   Views;
+// require __DIR__ . '/../vendor/autoload.php';
+// use App\Database\Database;
+
+
+// $conn = new Database();
+// $pdo = $conn->connect();
+
+
+// $sql = "";
+// $stmt = $pdo->prepare($sql);
+// $stmt->execute();
+
+
+// $commendes = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+// ?>
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +26,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-gray-50">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg">
@@ -21,7 +40,8 @@
                 </div>
                 <div class="flex items-center space-x-4">
                     <div class="relative">
-                        <select id="dashboardSelector" class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm">
+                        <select id="dashboardSelector"
+                            class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 text-sm">
                             <option value="client" selected>Dashboard Client</option>
                             <option value="livreur">Dashboard Livreur</option>
                             <option value="admin">Dashboard Admin</option>
@@ -62,29 +82,31 @@
             <!-- Colonne principale -->
             <div class="lg:col-span-2 space-y-6">
                 <!-- Informations de la commande -->
-                <div class="bg-white rounded-lg shadow p-6">
-                    <h3 class="text-xl font-bold text-gray-800 mb-4">Informations de la commande</h3>
-                    <div class="space-y-4">
-                        <div class="flex justify-between py-2 border-b">
-                            <span class="text-gray-600">Description</span>
-                            <span class="text-gray-800 font-medium">Colis fragile - Électronique</span>
-                        </div>
-                        <div class="flex justify-between py-2 border-b">
-                            <span class="text-gray-600">Type de colis</span>
-                            <span class="text-gray-800 font-medium">Fragile</span>
-                        </div>
-                        <div class="flex justify-between py-2 border-b">
-                            <span class="text-gray-600">Date de création</span>
-                            <span class="text-gray-800 font-medium">15/01/2024 à 14:30</span>
-                        </div>
-                        <div class="flex justify-between py-2">
-                            <span class="text-gray-600">Statut</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm font-semibold">
-                                En attente d'offres
-                            </span>
-                        </div>
-                    </div>
+              
+                <div class="flex justify-between py-2 border-b">
+                    <span class="text-gray-600">description</span>
+                    <span class="text-gray-800 font-medium">
+                        <?php echo $commande['description']; ?>
+                    </span>
                 </div>
+
+              
+                <div class="flex justify-between py-2 border-b">
+                    <span class="text-gray-600">Adresse</span>
+                    <span class="text-gray-800 font-medium">
+                        <?php echo htmlspecialchars($commande['addrese']); ?>
+                    </span>
+                </div>
+
+              
+                <div class="flex justify-between py-2 border-b">
+                    <span class="text-gray-600">Statut</span>
+                    <span class="text-gray-800 font-medium">
+                        <?php echo htmlspecialchars($commande['status']); ?>
+                    </span>
+                </div>
+
+
 
                 <!-- Adresse de livraison -->
                 <div class="bg-white rounded-lg shadow p-6">
@@ -92,10 +114,10 @@
                         <i class="fas fa-map-marker-alt text-indigo-600 mr-2"></i>Adresse de livraison
                     </h3>
                     <div class="space-y-2">
-                        <p class="text-gray-800">123 Rue Example</p>
-                        <p class="text-gray-800">75001 Paris</p>
+                        <p class="text-gray-800"> <?php echo htmlspecialchars($commande['ville']); ?></p>
+                        <p class="text-gray-800"> <?php echo htmlspecialchars($commande['Code_postal']); ?></p>
                         <p class="text-gray-600 text-sm mt-4">
-                            <i class="fas fa-phone mr-2"></i>06 12 34 56 78
+                            <i class="fas fa-phone mr-2"></i>06 12 34 56 78F
                         </p>
                     </div>
                 </div>
@@ -128,7 +150,8 @@
                                 <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">Express</span>
                                 <span class="px-2 py-1 bg-purple-100 text-purple-800 rounded text-xs">Fragile</span>
                             </div>
-                            <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                            <button
+                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                                 Accepter cette offre
                             </button>
                         </div>
@@ -156,7 +179,8 @@
                             <div class="flex flex-wrap gap-2 mb-3">
                                 <span class="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs">Express</span>
                             </div>
-                            <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                            <button
+                                class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                                 Accepter cette offre
                             </button>
                         </div>
@@ -229,10 +253,12 @@
                 <div class="bg-white rounded-lg shadow p-6">
                     <h3 class="text-xl font-bold text-gray-800 mb-4">Actions rapides</h3>
                     <div class="space-y-3">
-                        <button class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+                        <button
+                            class="w-full px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
                             <i class="fas fa-edit mr-2"></i>Modifier la commande
                         </button>
-                        <button class="w-full px-4 py-2 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition">
+                        <button
+                            class="w-full px-4 py-2 border border-red-300 text-red-600 rounded-lg hover:bg-red-50 transition">
                             <i class="fas fa-times mr-2"></i>Annuler la commande
                         </button>
                         <button class="w-full px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50 transition">
@@ -247,5 +273,5 @@
     <script src="assets/js/commande-detail.js"></script>
     <script src="assets/js/dashboard-selector.js"></script>
 </body>
-</html>
 
+</html>

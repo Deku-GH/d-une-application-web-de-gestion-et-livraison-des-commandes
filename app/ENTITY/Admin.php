@@ -1,12 +1,12 @@
 <?php
 namespace App\ENTITY;
-use app\ENTITY\Abstract\User;
+use app\Abstract\User;
 
 class Admin extends User
 {
 
-    public function __construct($nom, $prenom, $role, $email, $password)
+    public function __construct($nom, $prenom, $role, $email,$telephone, $password)
     {
-        parent::__construct($nom, $prenom, $email, $role::ADMIN, $password);
+        parent::__construct($nom, $prenom, $email, $telephone,$role::ADMIN, $password);
     }
 }

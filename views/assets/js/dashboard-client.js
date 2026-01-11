@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Soumission du formulaire de nouvelle commande
     if (newOrderForm) {
         newOrderForm.addEventListener('submit', function(e) {
-            e.preventDefault();
+            // e.preventDefault();
             
             const formData = new FormData(newOrderForm);
             const data = Object.fromEntries(formData);
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             alert('Commande créée avec succès !');
             newOrderModal.classList.add('hidden');
-            newOrderForm.reset();
+            // newOrderForm.reset();
             
             // Recharger la page pour afficher la nouvelle commande
             // window.location.reload();

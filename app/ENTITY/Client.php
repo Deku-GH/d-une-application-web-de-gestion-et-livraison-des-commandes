@@ -1,7 +1,7 @@
 <?php
 namespace App\ENTITY;
 
-use app\ENTITY\Abstract\User;
+use app\Abstract\User;
 
 
 class Client extends User
