@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Services;
-
+use App\Controllers\Data;
 use App\Database\Database;
 use PDO;
-
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 
 
@@ -46,14 +46,16 @@ class Cruduser
         return $resulta;
 
     }
+    
 }
 
 
-// $cread = new Cruduser();
-// $data = new Data();
-// $dataregister = $data->getdataregister();
-// $cread->register($dataregister['nom'], $dataregister['role'], $dataregister['email'], $dataregister['telephone'], $dataregister['password']);
-//  header("Location: ../../views/index.html");
+$cread = new Cruduser();
+$data = new Data();
+$dataregister = $data->getdataregister();
+$cread->register($dataregister['nom'], $dataregister['role'], $dataregister['email'], $dataregister['telephone'], $dataregister['password']);
+var_dump($dataregister);
+ header("Location: ../../views/index.html");
 
 
 

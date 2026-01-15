@@ -5,9 +5,7 @@ class  UserLoaging
 {
     public static function byRole(array $user): void
     {
-        // if (!isset($user['role'])) {
-        //     self::toLogin();
-        // }
+        
 
         switch ($user['role']) {
             case 'CLIENT':

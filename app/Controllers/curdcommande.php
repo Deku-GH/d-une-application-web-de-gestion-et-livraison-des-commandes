@@ -56,5 +56,5 @@ class Crudcommande
 
 
 
- header("Location: ../../views/dashboard-client.html");
+ header("Location: ../../views/dashboard-client.php");
 ?>

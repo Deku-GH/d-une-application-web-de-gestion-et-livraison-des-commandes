@@ -74,7 +74,7 @@ $user = $crud->checkaccount($_POST['email'], $_POST['password']);
 
             <div class="mt-6 text-center">
                 <p class="text-gray-600">Pas encore de compte ? 
-                    <a href="register.html" class="text-indigo-600 font-semibold hover:text-indigo-800">S'inscrire</a>
+                    <a href="register.php" class="text-indigo-600 font-semibold hover:text-indigo-800">S'inscrire</a>
                 </p>
             </div>
         </div>
